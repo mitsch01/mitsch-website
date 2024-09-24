@@ -1,33 +1,39 @@
 "use client"
-import Counter from "components/Counter"
 import Link from "next/link"
-
 
 export default function Footer() {
   return (
-    <footer className='site-footer'>
-      <p>Our footer</p>
+    <footer className='bg-black text-white p-4'>
       <nav>
-        <ul>
+        <ul className='flex space-x-4'>
           <li>
-            <Link href='/'>Home</Link>
+            <Link href='/' className='hover:text-white'>
+              Home
+            </Link>
           </li>
           <li>
-            <Link href='/about'>About</Link>
+            <Link href='/about' className='hover:text-white'>
+              About
+            </Link>
           </li>
           <li>
-            <Link href='/projects'>Projects</Link>
+            <Link href='/projects' className='hover:text-white'>
+              Projects
+            </Link>
           </li>
           <li>
-            <Link href='/playground'>Playground</Link>
+            <Link href='/playground' className='hover:text-white'>
+              Playground
+            </Link>
           </li>
           <li>
-            <Link href='/contact'>Contact</Link>
+            <Link href='/contact' className='hover:text-white'>
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
-      <p>Copyright ${new Date().getFullYear()}</p>
-      <Counter />
+      <p className='mt-4 text-right'>Copyright {new Date().getFullYear()}</p>
     </footer>
   )
 }
