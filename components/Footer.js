@@ -33,7 +33,7 @@ export default function Footer() {
           </li>
         </ul>
       </nav>
-      <p className='mt-4 text-right'>Copyright {new Date().getFullYear()}</p>
+      <p className='mt-4 text-right'>© {new Date().getFullYear()} Miriam Schwartz. All rights reserved.</p>
     </footer>
   )
 }
