@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Nav() {
   return (
-    <div className=' bg-black p-4 shadow-lg z-10'>
+    <div className='p-4'>
       <nav className='space-x-4'>
         <Link href='/' className='text-white hover:text-gray-300'>
           Home
