@@ -3,15 +3,15 @@ import Link from "next/link"
 
 export default function Nav() {
   return (
-    <div className='p-4'>
+    <div className=' bg-black p-4 shadow-lg z-10'>
       <nav className='space-x-4'>
         <Link href='/' className='text-white hover:text-gray-300'>
           Home
         </Link>
-        <Link href='/about' className='text-white hover:text-gray-300'>
+        <Link href='/#about' className='text-white hover:text-gray-300'>
           About
         </Link>
-        <Link href='/projects' className='text-white hover:text-gray-300'>
+        <Link href='/#projects' className='text-white hover:text-gray-300'>
           Projects
         </Link>
         <Link href='/playground' className='text-white hover:text-gray-300'>

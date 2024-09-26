@@ -2,11 +2,11 @@ import Image from "next/image"
 
 export default function Page() {
   return (
-    <div className='max-w-screen-lg'>
+    <div >
       {/* Grid Layout */}
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-0'>
         {/* Left: Image */}
-        <div className='relative w-full h-full overflow-hidden'>
+        <div className='relative w-full h-screen overflow-hidden'>
           <Image
             src='/images/miri_foto.jpeg'
             alt='Header Image'
@@ -15,8 +15,8 @@ export default function Page() {
           />
         </div>
 
-        {/* Right: Text and Signup Form */}
-        <div className='text-lg text-gray-800 p-8 leading-relaxed'>
+        {/* Right: Contact Form */}
+        <div className='flex flex-col justify-center p-28'>
           <h2 className='text-6xl font-bold uppercase text-black mb-6'>Contact</h2>
           <p className='mb-4'>I would love to hear from you! Feel free to reach out to me through the form below or connect with me via social media.</p>
 

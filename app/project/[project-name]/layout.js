@@ -5,11 +5,8 @@ export const metadata = {
 
 export default function ProjectLayout({ children }) {
   return (
-    <div>
-      <header>
-        <h1>Projects</h1>
-      </header>
+    <>
       <main>{children}</main>
-    </div>
+    </>
   )
 }
