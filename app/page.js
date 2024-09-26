@@ -10,10 +10,10 @@ export default function Page() {
         <Image src='/images/header-image.jpg' alt='Header Image' layout='fill' className='object-cover' />
       </div>
 
-      <div className='relative z-10 max-w-screen-lg mx-auto m-8 p-8'>
+      <div className='relative z-10 max-w-screen-md mx-auto m-8 p-8'>
         {/* About */}
         <section id='about'>
-          <h2 className='text-6xl font-bold uppercase text-black mb-6'>About</h2>
+          <h1 className='text-7xl font-bold uppercase text-black mt-20 mb-8'>About</h1>
           <div className='flex flex-wrap gap-3 mb-8'>
             <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>Fullstack Development</span>
             <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>Frontend Development</span>
@@ -36,7 +36,7 @@ export default function Page() {
 
         {/* Projects */}
         <section id='projects'>
-          <h1 className='text-6xl font-bold uppercase text-black mt-12'>Projects</h1>
+          <h1 className='text-7xl font-bold uppercase text-black pt-16 mt-20'>Projects</h1>
           <RepoGallery />
         </section>
       </div>

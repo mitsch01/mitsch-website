@@ -11,6 +11,20 @@ html {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: 'Teko';
+  src: url('/fonts/Teko-VariableFont_wght.ttf') format('truetype'); 
+  font-weight: 100 700; 
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-Light.ttf') format('truetype');
+  font-weight: 300; /* Light font weight */
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -24,20 +38,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-
+h1, h2{
+  @apply font-teko
 }
 
-h2 {
-  
+h3 {
+  text-transform: uppercase;
 }
 
-p {
-  
-}
-
-a{
-
+p, li, label, input, textarea, button {
+  @apply font-hind;
 }
 
 a:hover{

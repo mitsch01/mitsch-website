@@ -33,7 +33,7 @@ const RepoGallery = () => {
   return (
     <div className='flex flex-wrap py-8'>
       {repos.map(repo => (
-        <div key={repo.id} className='bg-white border border-gray-200 mr-8 mb-8 p-10 w-64 flex flex-col justify-between'>
+        <div key={repo.id} className='bg-white border border-gray-200 mr-8 mb-8 p-10 w-80 flex flex-col justify-between'>
           {" "}
           {/* Flex column for alignment */}
           <div>
@@ -44,7 +44,7 @@ const RepoGallery = () => {
               height={200} // Adjust height as needed
               className='mb-4' // Add some margin below the image
             />
-            <h3 className='text-lg font-semibold'>{transformString(repo.name)}</h3>
+            <h3 className='text-lg font-semibold py-4'>{transformString(repo.name)}</h3>
             <p className='text-gray-600'>{repo.description || "No description available."}</p>
           </div>
           <Link href={`/project/${repo.name}`} className='mt-4 inline-block bg-[#e8175d] text-white px-4 py-2 rounded hover:bg-[#e1175d] text-center'>

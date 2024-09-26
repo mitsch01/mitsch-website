@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Page() {
   return (
-    <div >
+    <div>
       {/* Grid Layout */}
       <div className='grid grid-cols-1 md:grid-cols-2 gap-0'>
         {/* Left: Image */}
@@ -17,7 +17,7 @@ export default function Page() {
 
         {/* Right: Contact Form */}
         <div className='flex flex-col justify-center p-28'>
-          <h2 className='text-6xl font-bold uppercase text-black mb-6'>Contact</h2>
+          <h1 className='text-7xl font-bold uppercase text-black mb-8'>Contact</h1>
           <p className='mb-4'>I would love to hear from you! Feel free to reach out to me through the form below or connect with me via social media.</p>
 
           {/* Signup Form */}
