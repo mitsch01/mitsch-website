@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import Image from "next/image" // Import Image component from Next.js
+import Image from "next/image" 
 
 const RepoGallery = () => {
   const [repos, setRepos] = useState([])
@@ -25,10 +25,10 @@ const RepoGallery = () => {
       .join(" ")
   }
 
-  const getImagePath = repoName => {
-    const formattedName = repoName.replace(/[-_]/g, "_") // Replace hyphens or underscores with underscores
-    return `/images/${formattedName}.png` // Assuming images are named consistently
-  }
+  // const getImagePath = repoName => {
+  //   const formattedName = repoName.replace(/[-_]/g, "_") // Replace hyphens or underscores with underscores
+  //   return `/images/${formattedName}.png` // Assuming images are named consistently
+  // }
 
   return (
     <div className='flex flex-wrap py-8'>
@@ -37,13 +37,13 @@ const RepoGallery = () => {
           {" "}
           {/* Flex column for alignment */}
           <div>
-            <Image
+            {/* <Image
               src={getImagePath(repo.name)} // Use the generated image path
               alt={transformString(repo.name)} // Provide an alt text
               width={200} // Adjust width as needed
               height={200} // Adjust height as needed
               className='mb-4' // Add some margin below the image
-            />
+            /> */}
             <h3 className='text-lg font-semibold py-4'>{transformString(repo.name)}</h3>
             <p className='text-gray-600'>{repo.description || "No description available."}</p>
           </div>

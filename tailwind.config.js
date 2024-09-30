@@ -5,7 +5,10 @@ module.exports = {
     extend: {
       fontFamily: {
         teko: ["Teko", "sans-serif"],
-        hind: ["Hind Siliguri", "sans-serif"]
+        hind: ["Hind Siliguri", "sans-serif"],
+        homemade: ["HomemadeApple", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+        cooperhewitt: ["Cooper Hewitt", "sans-serif"]
       }
     }
   },

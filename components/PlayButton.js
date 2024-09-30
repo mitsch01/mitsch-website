@@ -7,11 +7,19 @@ import Link from "next/link"
 const PlayButton = () => {
   const [rotation, setRotation] = useState(0)
 
-  // This effect listens to scroll events and updates the rotation
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      setRotation(scrollY * 0.2) // Adjust the multiplier to control the rotation speed
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY
+          const newRotation = scrollY * 0.1
+          setRotation(newRotation)
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -23,15 +31,13 @@ const PlayButton = () => {
 
   return (
     <Link href='/playground'>
-      <button className='fixed z-10 bottom-28 right-12 focus:outline-none' aria-label='Go to Playground'>
-        <Image
-          src='/images/button-black.png'
-          alt='Play Button'
-          width={50}
-          height={50}
-          className={`w-36 h-36 transition-transform duration-300 transform hover:scale-125`}
-          style={{ transform: `rotate(${rotation}deg)` }} // Apply rotation based on scroll
-        />
+      <button className='fixed z-10 bottom-12 right-12 focus:outline-none' aria-label='Create a poem'>
+        <div
+          className='relative w-28 h-28 transition-transform duration-300 transform hover:scale-125 flex items-center justify-center'
+          style={{ transform: `rotate(${rotation}deg)`, transition: "transform 0.1s ease-out" }} // Adding smooth transition
+        >
+          <Image src='/images/create-button.png' alt='Play Button' width={100} height={100} className='absolute w-full h-full' />
+        </div>
       </button>
     </Link>
   )

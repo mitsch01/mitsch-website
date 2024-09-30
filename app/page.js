@@ -1,4 +1,3 @@
-import Layout from "./layout"
 import Image from "next/image"
 import RepoGallery from "../components/RepoGallery"
 
@@ -6,14 +5,14 @@ export default function Page() {
   return (
     <>
       {/* Header */}
-      <div className='relative w-full h-[500px] overflow-hidden'>
+      <div className='relative w-full h-screen overflow-hidden'>
         <Image src='/images/header-image.jpg' alt='Header Image' layout='fill' className='object-cover' />
       </div>
 
       <div className='relative z-10 max-w-screen-md mx-auto m-8 p-8'>
         {/* About */}
         <section id='about'>
-          <h1 className='text-7xl font-bold uppercase text-black mt-20 mb-8'>About</h1>
+          <h1 className='text-7xl font-bold uppercase text-black pt-16 mt-4 mb-8 tracking-tight'>About</h1>
           <div className='flex flex-wrap gap-3 mb-8'>
             <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>Fullstack Development</span>
             <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>Frontend Development</span>
@@ -25,8 +24,7 @@ export default function Page() {
             <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>Daisy UI</span>
             <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>Google Firebase</span>
             <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>Creativity</span>
-            <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>super fast learner</span>
-            <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>fluent in English</span>
+            <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>English & German</span>
             <span className='bg-[#e8175d] text-white py-2 px-6 uppercase'>Team 🤍 love </span>
           </div>
           <div className='text-lg text-gray-800 leading-relaxed'>
@@ -36,7 +34,7 @@ export default function Page() {
 
         {/* Projects */}
         <section id='projects'>
-          <h1 className='text-7xl font-bold uppercase text-black pt-16 mt-20'>Projects</h1>
+          <h1 className='text-7xl font-bold uppercase text-black pt-16 mt-20 tracking-tight'>Projects</h1>
           <RepoGallery />
         </section>
       </div>
