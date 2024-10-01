@@ -1,14 +1,18 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
-import Image from "next/image" 
+import Image from "next/image"
 
 const RepoGallery = () => {
   const [repos, setRepos] = useState([])
+  const [cardImages, setCardImages] = useState([])
+  const [visibleRepos, setVisibleRepos] = useState(4) // State for managing visible repos
+  const canvasRef = useRef(null)
   const username = "mitsch01"
 
   useEffect(() => {
+    // Fetch GitHub repos
     const fetchRepos = async () => {
       const response = await fetch(`https://api.github.com/users/${username}/repos`)
       const data = await response.json()
@@ -18,6 +22,39 @@ const RepoGallery = () => {
     fetchRepos()
   }, [])
 
+  useEffect(() => {
+    if (repos.length > 0) {
+      // Load the background image and create random images for each card
+      const loadImageAndGenerateCards = async () => {
+        const canvas = canvasRef.current // The invisible canvas
+        const ctx = canvas.getContext("2d")
+
+        const img = new window.Image()
+        img.src = "/images/sprite-background.png"
+
+        img.onload = () => {
+          const cardImages = repos.map(() => {
+            const sectionWidth = 1000 // Width of the section to take from the original image
+            const sectionHeight = 1000 // Height of the section to take from the original image
+            const randomX = Math.floor(Math.random() * (img.width - sectionWidth))
+            const randomY = Math.floor(Math.random() * (img.height - sectionHeight))
+
+            canvas.width = 320
+            canvas.height = 320
+
+            ctx.drawImage(img, randomX, randomY, sectionWidth, sectionHeight, 0, 0, 320, 320)
+
+            return canvas.toDataURL("image/png")
+          })
+
+          setCardImages(cardImages) // Store the generated images
+        }
+      }
+
+      loadImageAndGenerateCards()
+    }
+  }, [repos])
+
   const transformString = input => {
     return input
       .split("-")
@@ -25,35 +62,35 @@ const RepoGallery = () => {
       .join(" ")
   }
 
-  // const getImagePath = repoName => {
-  //   const formattedName = repoName.replace(/[-_]/g, "_") // Replace hyphens or underscores with underscores
-  //   return `/images/${formattedName}.png` // Assuming images are named consistently
-  // }
+  const loadMoreRepos = () => {
+    setVisibleRepos(prev => prev + 4) // Load 4 more repos on button click
+  }
 
   return (
-    <div className='flex flex-wrap py-8'>
-      {repos.map(repo => (
-        <div key={repo.id} className='bg-white border border-gray-200 mr-8 mb-8 p-10 w-80 flex flex-col justify-between'>
-          {" "}
-          {/* Flex column for alignment */}
-          <div>
-            {/* <Image
-              src={getImagePath(repo.name)} // Use the generated image path
-              alt={transformString(repo.name)} // Provide an alt text
-              width={200} // Adjust width as needed
-              height={200} // Adjust height as needed
-              className='mb-4' // Add some margin below the image
-            /> */}
-            <h3 className='text-lg font-semibold py-4'>{transformString(repo.name)}</h3>
-            <p className='text-gray-600'>{repo.description || "No description available."}</p>
-          </div>
-          <Link href={`/project/${repo.name}`} className='mt-4 inline-block bg-[#e8175d] text-white px-4 py-2 rounded hover:bg-[#e1175d] text-center'>
-            {" "}
-            {/* Align button to the bottom */}
-            View Details
+    <div className='flex flex-col items-center py-8'>
+      {/* Invisible canvas for image generation */}
+      <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
+
+      <div className='flex flex-wrap justify-center'>
+        {repos.slice(0, visibleRepos).map((repo, index) => (
+          <Link href={`/project/${repo.name}`} key={repo.id} className='clickable mr-8 mb-8 w-80 flex flex-col justify-between overflow-hidden transition-transform duration-100 hover:scale-110 hover:rounded'>
+            {/* Top Part: Image */}
+            <div className='w-full'>{cardImages[index] ? <Image src={cardImages[index]} alt={`${repo.name} header`} width={320} height={320} className='w-full h-full object-cover' /> : null}</div>
+
+            {/* Bottom Part: Content */}
+            <div className='flex flex-col flex-grow justify-center items-center p-4 bg-black text-center'>
+              <h3 className='text-white font-hind font-bold text-xl'>{transformString(repo.name)}</h3>
+            </div>
           </Link>
-        </div>
-      ))}
+        ))}
+      </div>
+
+      {/* Load More Button */}
+      {visibleRepos < repos.length && (
+        <button onClick={loadMoreRepos} className='text-lg w-80 bg-[#e8175d] text-white py-2 px-4 hover:bg-[#c3144f]'>
+          Load More
+        </button>
+      )}
     </div>
   )
 }

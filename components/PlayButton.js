@@ -31,9 +31,9 @@ const PlayButton = () => {
 
   return (
     <Link href='/playground'>
-      <button className='fixed z-10 bottom-12 right-12 focus:outline-none' aria-label='Create a poem'>
+      <button className='fixed z-10 bottom-8 right-8 focus:outline-none' aria-label='Create a poem'>
         <div
-          className='relative w-28 h-28 transition-transform duration-300 transform hover:scale-125 flex items-center justify-center'
+          className='clickable relative w-36 h-36 transition-transform duration-300 transform hover:scale-125 flex items-center justify-center'
           style={{ transform: `rotate(${rotation}deg)`, transition: "transform 0.1s ease-out" }} // Adding smooth transition
         >
           <Image src='/images/create-button.png' alt='Play Button' width={100} height={100} className='absolute w-full h-full' />

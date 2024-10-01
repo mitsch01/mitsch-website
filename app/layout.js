@@ -1,5 +1,5 @@
 import "./globals.css"
-import Header from "components/Header"
+import HeaderWhite from "components/HeaderWhite"
 import Footer from "components/Footer"
 import PlayButton from "components/PlayButton"
 
@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
         <link rel='icon' href='/favicon.ico' />
       </head>
       <body className='min-h-screen flex flex-col'>
-        <Header />
         <main className='flex-grow'>{children}</main>
         <PlayButton />
         <Footer />
