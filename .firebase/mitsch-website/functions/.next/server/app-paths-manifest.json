@@ -1,9 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/contact/page": "app/contact/page.js",
-  "/page": "app/page.js",
+  "/playground/page": "app/playground/page.js",
   "/api/save-haiku/route": "app/api/save-haiku/route.js",
   "/api/generate-haiku/route": "app/api/generate-haiku/route.js",
-  "/playground/page": "app/playground/page.js",
+  "/page": "app/page.js",
   "/project/[project-name]/page": "app/project/[project-name]/page.js"
 }

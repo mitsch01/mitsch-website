@@ -12,7 +12,7 @@
       "static/chunks/fd9d1056-13baa9b2029d31fe.js",
       "static/chunks/117-06e8ad08bc47bdf0.js",
       "static/chunks/main-app-277b01c275e1e76a.js",
-      "static/css/bed07e8be70244ee.css",
+      "static/css/6cb11b9b597627e2.css",
       "static/chunks/869-a41cd74f36071d90.js",
       "static/chunks/app/layout-a6d8769c6874a992.js"
     ],
@@ -27,14 +27,6 @@
       "static/chunks/768-09c7213ba14b64d5.js",
       "static/chunks/app/contact/page-fb2f8e4b56d3674f.js"
     ],
-    "/page": [
-      "static/chunks/webpack-efff62d02e40900c.js",
-      "static/chunks/fd9d1056-13baa9b2029d31fe.js",
-      "static/chunks/117-06e8ad08bc47bdf0.js",
-      "static/chunks/main-app-277b01c275e1e76a.js",
-      "static/chunks/869-a41cd74f36071d90.js",
-      "static/chunks/app/page-b0206e9d437afc67.js"
-    ],
     "/playground/page": [
       "static/chunks/webpack-efff62d02e40900c.js",
       "static/chunks/fd9d1056-13baa9b2029d31fe.js",
@@ -42,6 +34,14 @@
       "static/chunks/main-app-277b01c275e1e76a.js",
       "static/chunks/869-a41cd74f36071d90.js",
       "static/chunks/app/playground/page-c12c7d5f16d88cef.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-efff62d02e40900c.js",
+      "static/chunks/fd9d1056-13baa9b2029d31fe.js",
+      "static/chunks/117-06e8ad08bc47bdf0.js",
+      "static/chunks/main-app-277b01c275e1e76a.js",
+      "static/chunks/869-a41cd74f36071d90.js",
+      "static/chunks/app/page-c632039cb0eeec42.js"
     ],
     "/project/[project-name]/page": [
       "static/chunks/webpack-efff62d02e40900c.js",
